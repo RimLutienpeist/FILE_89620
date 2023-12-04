@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8"/>
+        <title>hw4</title>
+        <style>
+            img {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                left: 5em;
+                top: 5em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="./90881392_p0.png"/>
+    </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const img = document.querySelector("img");
+        const winWidth = window.screen.availWidth;
+        const winHeight = window.screen.availHeight;
+        let width = Math.random() * winWidth;
+        let height = Math.random() * winHeight;
+        img.style.left = width + 'px';
+        img.style.top = height + 'px';
+
+        let vx = 3;
+        let vy = 3;
+
+        function movePos(){
+            width = (width + vx) % (winWidth - 300);
+            height = (height + vx) % (winHeight - 300);
+            img.style.left = width + 'px';
+            img.style.top = height + 'px';
+        }
+
+
+        let intervalId; 
+        const intervalTime = 50;
+
+        startMoving();
+        
+        img.addEventListener("mouseout", startMoving);
+        img.addEventListener("mouseover", stopMoving);
+        
+        function startMoving() {
+            intervalId = setInterval(movePos, intervalTime);
+        }
+        function stopMoving() {
+            clearInterval(intervalId); 
+        }
+
+    });
+    </script>
+</html>
+

@@ -1,0 +1,52 @@
+body {
+    background-color: #FDF6EC;
+}  
+
+.navi {
+    height: 10%;
+    width: 100%;
+    background-color: red;
+}
+
+.main {
+    height: 90%;
+    width: 100%;
+    background: blue;
+}
+
+.leftside {
+    height: 90%;
+    width: 10%;
+    float: left;
+    background-color: green;
+}
+
+.wrapper {
+    margin-left: 10em;
+    width:420px;
+    margin-top: 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 20px;
+}
+
+.wrapper > div {
+  border-radius: 0.5em;
+}
+
+.box1 {
+    background: white;
+}
+
+.box2 {
+    background: red;
+}
+
+.box3 {
+    background: yellow;
+}
+
+.box4 {
+    background: green;
+}

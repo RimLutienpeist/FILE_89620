@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>test</title>
+    <link rel="icon" href="./img/icon.ico"/>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div class="btn">
+      <p>&nbsp;Still Being Building~</p>
+    </div>
+
+    <div class="top">
+      <a href="https://www.google.com/" target="_blank">Google</a>
+      <a href="https://www.bilibili.com/" target="_blank">BILIBILI</a>
+      <a href="https://github.com/" target="_blank">Github</a>
+      <a href="https://outlook.com/" target="_blank">Outlook</a>
+      <a href="https://www.cc98.org/" target="_blank">CC98</a>
+      <a href="https://course.zju.edu.cn/zh-cn/" target="_blank">学在浙大</a>
+      <a href="https://classroom.zju.edu.cn/" target="_blank">智云课堂</a>
+    </div>
+
+    <div class="content">
+      <h1 class="avr">Just a Website for Homework/Test</h1>
+    </div>
+
+    <div class="yinyue">
+      <img class="music" src="music.jpg" alt="" />
+      <audio autoplay="autoplay" id="audio" loop="loop">
+        <source src="music.mp3" type="audio/MP3" />
+      </audio>
+    </div>
+
+    <div class="row">
+      <div class="centercolumn">
+        <div class="card">
+          <h2 id="biaoti">网页基础—— div标签和个人网页制作</h2>
+          <br />
+          <hr />
+          <h4 id="qita">2023.11.1</h4>
+          <p style="text-indent: 2em;">
+            <ul>
+              <li>实验目的</li>
+              <ul>
+                <li>
+                  通过实验掌握如何使用div标签和css样式表设计网页结构，完成页面的简单布局，了解网页的分块设计思想；
+                </li>
+                <li>
+                  能熟练运用css样式表中width、height、float、margin-top、background-color、font-size、display等基本属性；
+                </li>
+                <li>
+                  掌握 css 选择器相关知识，知晓如何对指定元素的样式进行修改；
+                </li>
+                <li>
+                  能够结合之前学过的html和css知识，对页面进行布局填充，设计个性化的网页
+                </li>
+              </ul>
+            </ul>
+            </p>
+        </div>
+        <br /><br />
+        
+        <div class="card">
+          <h2 id="biaoti">网页基础—— div标签和个人网页制作</h2>
+          <br />
+          <hr />
+          <h4 id="qita">2023.11.1</h4>
+          <p style="text-indent: 2em;">
+            <ul>
+              <li>实验目的</li>
+              <ul>
+                <li>
+                  通过实验掌握如何使用div标签和css样式表设计网页结构，完成页面的简单布局，了解网页的分块设计思想；
+                </li>
+                <li>
+                  能熟练运用css样式表中width、height、float、margin-top、background-color、font-size、display等基本属性；
+                </li>
+                <li>
+                  掌握 css 选择器相关知识，知晓如何对指定元素的样式进行修改；
+                </li>
+                <li>
+                  能够结合之前学过的html和css知识，对页面进行布局填充，设计个性化的网页
+                </li>
+              </ul>
+            </ul>
+            </p>
+        </div>
+      </div>
+    </div>
+
+    <button class="bt" onclick="window.open('https://www.zju.edu.cn/')">ZJU</button>
+
+    <div class="footer">
+      <br />
+      <p>OTHER</p>
+      <a href="www.bilibili.com" target="_blank">
+        <abbr title="my bilibili: 御坂110号">
+          <img class="someimg" src="./img/bili.webp" alt="" width="30" />
+        </abbr>
+      </a>
+      <abbr title="QQ:896209426">
+        <img class="someimg" src="./img/2.png" alt="" width="30"/>
+      </abbr>
+      <abbr title="Github:RimLutienpeist"
+        ><img class="someimg" src="./img/gi.jpg" alt="" width="30"/>
+      </abbr>
+    </div>
+
+    <script>
+      let mucics = document.getElementById('audio')
+      document.body.addEventListener('mousemove', function() {
+          setTimeout(() => {
+              mucics.play();
+          }, 2000);
+      }, false);
+      </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+body {
+    background-color: #FDF6EC;
+    
+}
+
+h1 {
+    color: #FDF6EC;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+.title {
+    width: 100%;
+    height: 3em;
+    position: fixed;        
+    background: #967E76;
+    padding: 10px 0;
+    color: #967E76;
+    border-radius: 0.5em;
+    box-shadow:0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.7);
+}
+
+.title h1 {
+    display: block;
+    text-align: left;
+    margin-left: 1em;
+    padding: 10px;
+}
+
+.fixed-footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 3em;
+    background: black;
+}
+
+.footer {
+    display: block;
+    color: white;
+    font-size: large;
+    text-align: center;
+}
+
+

@@ -1,0 +1,46 @@
+body {
+    /* background-color: black;
+    background-image: url(image/background.jpg);
+    background-size: 100% 150%;
+    background-attachment: fixed;
+    position: absolute; */
+    /* width: 100%;
+    height: 100%; */
+    background: 
+      fixed,
+      linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+      url(image/background.jpg),
+      center/10%,
+      no-repeat;
+}
+
+h1 {
+    height: 50px;
+    width: 100px;
+    background-color: antiquewhite;
+}
+
+.none1 {
+    width: 110px;
+    height: 20px;
+    border: 5px solid black;
+    margin: -50px 0 0 0;
+    border-left-color: white;
+    border-top-color: antiquewhite;
+    background-color: aliceblue;
+}
+
+.wrapper {
+    margin-left: 500px;
+    width:420px;
+    margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 20px;
+}
+
+.wrapper > div {
+  background-color: rebeccapurple;
+  border-radius: .5em;
+}

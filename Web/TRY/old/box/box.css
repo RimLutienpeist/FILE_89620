@@ -1,0 +1,20 @@
+.box {
+    width: 20em;
+    height: 8em;
+    background-color: aquamarine;
+    border: chartreuse solid 0.1em;
+    border-radius: 0.5em;
+    box-shadow: 0.4em 0.4em 0.3em 0em rgba(0, 0, 0, 0.7);
+    background-image: linear-gradient(to left top, rgba(0, 0, 0, 0.2) 30%, dodgerblue) ;
+}
+
+.box p {
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+.box:hover{
+    opacity: 70%;
+}

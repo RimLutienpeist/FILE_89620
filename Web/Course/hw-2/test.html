@@ -1,0 +1,41 @@
+<html>
+<head>
+  <style>
+    .disabled {
+      background-color: lightgray;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <form id="myForm">
+    <input type="text" name="name" placeholder="姓名">
+    <input type="email" name="email" placeholder="邮箱">
+  </form>
+  <script>
+    var form = document.getElementById('myForm');
+    var submitButton = document.getElementById('submitButton');
+    var inputs = form.getElementsByTagName('input');
+
+    form.addEventListener('input', function() {
+      var isFormValid = true;
+
+      for (var i = 0; i < inputs.length; i++) {
+        if (!inputs[i].value) {
+          isFormValid = false;
+          break;
+        }
+      }
+
+      if (isFormValid) {
+        submitButton.classList.remove('disabled');
+        submitButton.removeAttribute('disabled');
+      } else {
+        submitButton.classList.add('disabled');
+        submitButton.setAttribute('disabled', 'disabled');
+      }
+    });
+  </script>
+
+</body>
+</html>

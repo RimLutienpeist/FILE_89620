@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <meta charset="utf-8"/>
+    <title>form-test</title>
+    <link rel="stylesheet" href="form.css"/>
+</html>
+
+<body>
+    <form action="/form" method="post">
+        <ul>
+            <li>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name" value="Li Ming"/>
+            </li>
+            <li>
+                <label for="mail">E-mail:</label>
+                <input type="email" id="mail" name="user_email" value="XXX@outlook.com"/>
+            </li>
+            <li>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="user_message">wtd</textarea>
+            </li>
+
+            <li class="button">
+                <button type="submit">Send</button>
+                <button type="reset">Reset</button>
+            </li>
+        </ul>
+    </form>
+    <br>
+    <hr>
+    <br>
+    <form>
+        <fieldset>
+          <legend>Fruit juice size</legend>
+          <p>
+            <input type="radio" name="size" id="size_1" value="small" />
+            <label for="size_1">Small</label>
+          </p>
+          <p>
+            <input type="radio" name="size" id="size_2" value="medium" />
+            <label for="size_2">Medium</label>
+          </p>
+          <p>
+            <input type="radio" name="size" id="size_3" value="large" />
+            <label for="size_3">Large</label>
+          </p>
+        </fieldset>
+      </form>
+      <br>
+      <hr>
+      <br>
+      <form>
+        <p>
+          <input type="checkbox" id="taste_1" name="taste_cherry" value="1" />
+          <label for="taste_1">I like cherry</label>
+        </p>
+        <p>
+          <input type="checkbox" id="taste_2" name="taste_banana" value="2" />
+          <label for="taste_2">I like banana</label>
+        </p>
+      </form>
+      <br>
+      <hr>
+      <br>
+      <p>Required fields are followed by <abbr title="required">*</abbr>.</p>
+      <fieldset>
+        <legend>这样写：</legend>
+          <!--这样写：-->
+          <div>
+          <label for="username">Name:</label>
+          <input type="text" name="username" />
+          <label for="username"><abbr title="required">*</abbr></label>
+          </div>
+      </fieldset>
+      <fieldset>
+        <legend>但是这样写会更好：</legend>
+        <!--但是这样写会更好：-->
+        <div>
+        <label for="username">
+            <span>Name:</span>
+            <input id="username" type="text" name="username" />
+            <abbr title="required">*</abbr>
+        </label>
+        </div>
+        </fieldset>
+        <fieldset>
+            <legend>但最好的可能是这样：</legend>
+            <!--但最好的可能是这样：-->
+        <div>
+        <label for="username">Name: <abbr title="required">*</abbr></label>
+        <input id="username" type="text" name="username" />
+        </div>
+        <!-- 即如<abbr>之类的其他小部件标签方同一个<label>里面，不要出现多个<label> -->
+    </fieldset>
+    <br>
+    <hr>
+    <br>
+    <h1>Payment form</h1>
+    <p>
+      Required fields are followed by
+      <strong><abbr title="required">*</abbr></strong
+      >.
+    </p>
+<h1>Payment form</h1>
+<p>
+  Required fields are followed by
+  <strong><abbr title="required">*</abbr></strong
+  >.
+</p>
+<section>
+    <h2>Contact information</h2>
+    <fieldset>
+      <legend>Title</legend>
+      <ul>
+        <li>
+          <label for="title_1">
+            <input type="radio" id="title_1" name="title" value="K" />
+            King
+          </label>
+        </li>
+        <li>
+          <label for="title_2">
+            <input type="radio" id="title_2" name="title" value="Q" />
+            Queen
+          </label>
+        </li>
+        <li>
+          <label for="title_3">
+            <input type="radio" id="title_3" name="title" value="J" />
+            Joker
+          </label>
+        </li>
+      </ul>
+    </fieldset>
+    <p>
+      <label for="name">
+        <span>Name: </span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="text" id="name" name="username" />
+    </p>
+    <p>
+      <label for="mail">
+        <span>E-mail: </span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="email" id="mail" name="usermail" />
+    </p>
+    <p>
+      <label for="pwd">
+        <span>Password: </span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="password" id="pwd" name="password" />
+    </p>
+  </section>
+  <section>
+    <h2>Payment information</h2>
+    <p>
+      <label for="card">
+        <span>Card type:</span>
+      </label>
+      <select id="card" name="usercard">
+        <option value="visa">Visa</option>
+        <option value="mc">Mastercard</option>
+        <option value="amex">American Express</option>
+      </select>
+    </p>
+    <p>
+      <label for="number">
+        <span>Card number:</span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="number" id="number" name="cardnumber" />
+    </p>
+    <p>
+      <label for="date">
+        <span>Expiration date:</span>
+        <strong><abbr title="required">*</abbr></strong>
+        <em>formatted as mm/yy</em>
+      </label>
+      <input type="date" id="date" name="expiration" />
+    </p>
+  </section>
+  <p><button type="submit">Validate the payment</button></p>
+
+
+</body>

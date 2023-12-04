@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head lang="zh-CN">
+        <meta charset="utf-8"/>
+        <title>homework-2_20231011</title>
+        <link rel="stylesheet" href="hw-2.css" />
+        <script src="card.js"></script>
+    </head>
+
+    <body>
+        <!-- table -->
+        <form id="myForm" action="XXX" method="post">
+        <table>
+            <caption>
+                <p class="link" id="tlink">
+                    <a href="https://www.zju.edu.cn">注册信息</a>
+                </p>
+            </caption>
+            
+            <tr>
+                <th rowspan="5" >基本信息</th>
+                <td><label for="name">用户姓名：</label></td>
+                <td colspan="2"><input type="text" id="name" name="user_name" required pattern="\S+.*"/></td>
+            </tr>
+            <tr>
+                <td><label for="tname">真实姓名：</label></td>
+                <td colspan="2"><input type="text" id="tname" name="user_name" required pattern="\S+.*"/></td>
+            </tr>
+            <tr>
+                <td><label for="password" text-align="justify">密码：</label></td>
+                <td colspan="2"><input type="password" id="password" name="password" required pattern="\S+.*"/></td>
+            </tr>
+            <tr>
+                <td><label for="password-confirm">确认密码：</label></td>
+                <td colspan="2"><input type="password" id="password-confirm" name="password-confirm" required pattern="\S+.*"/></td>
+            </tr>
+            <tr>
+                <td><label for="gender">性别：</label></td>
+                <td colspan="2">
+                    <input class="not"  type="radio" name="gender" id="boy" value="boy"  required pattern="\S+.*"/>
+                    <label for="size_1">男</label>
+                    <input class="not"  type="radio" name="gender" id="girl" value="girl"  required pattern="\S+.*"/>
+                    <label for="size_1">女</label>
+                </td>
+            </tr>
+
+            <tr><th colspan="4">通信信息</th></tr>
+            <tr>
+                <td><label for="phone">手机号码：</label></td>
+                <td><input type="tel" id="phone" name="phone" required pattern="\S+.*"/></td>
+                <td><label for="email">电子邮箱：</label></td>
+                <td><input type="email" id="email" name="email" required pattern="\S+.*"/></td>
+            </tr>
+            <tr>
+                <td><label for="address">居住地址：</label></td>
+                <td colspan="3"><input type="text" id="address" name="address" required pattern="\S+.*"/></td>
+            </tr>
+            <tr><th colspan="4">额外信息</th></tr>
+            <tr>
+                <td><label for="hobby">爱好：</label></td>
+                <td colspan="3">
+                    <input class="not" type="checkbox" id="hobby-1" name="basketball" value="1"  required pattern="\S+.*"/>
+                    <label for="hobby-1">篮球</label>
+                    <input class="not"  type="checkbox" id="hobby-2" name="football" value="2"  required pattern="\S+.*"/>
+                    <label for="hobby-1">足球</label>
+                    <input class="not"  type="checkbox" id="hobby-3" name="ping-pong" value="3"  required pattern="\S+.*"/>
+                    <label for="hobby-1">乒乓球</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="photo">头像</label>
+                </td>
+                <td colspan="3">
+                    <input type="file" id="photo" name="photo" required/>
+                </td>
+            <tr>
+                <td><label for="subscript">个人说明</label>
+                </td>
+                <td colspan="3">
+                    <textarea id="subscript" name="subscript" required></textarea>
+                </td>
+            </tr>
+            </tr>
+    </table>
+    <br>
+
+    <button class="send disabled" id="submitButton" type="submit">Send</button>
+    <button class="send" type="reset">Reset</button>
+    </form>
+
+
+    
+    
+    <br>
+    <hr>
+    <br>
+    
+    
+    <!-- link     -->
+    <p class="linki">
+            <a class="l-i" href="https://www.zju.edn.cn">
+                <img class="img" src="zju.png"/>
+            </a>
+        </p>
+
+        <p class="link">
+            <a class="l-w" href="https://www.zju.edn.cn">ZJU</a>
+            <a class="l-nb" href="https://www.zju.edn.cn">ZJU-no-blank</a>
+            <a class="l-b" target="_blank" href="https://www.zju.edn.cn">ZJU-blank</a>
+            <a class="name-e" href="#end">END</a>
+        </p>
+
+        <p class="song">
+
+            大不自多 海纳江河<br/>
+            惟学无际 际于天地<br/>
+            形上谓道兮 形下谓器<br/>
+            礼主别异兮 乐主和同<br/>
+            知其不二兮 尔听斯聪<br/>
+            国有成均 在浙之滨<br/>
+            昔言求是 实启尔求真<br/>
+            习坎示教 始见经纶<br/>
+            无曰已是 无曰遂真<br/>
+            靡革匪因 靡故匪新<br/>
+            何以新之 开物前民<br/>
+            嗟尔髦士 尚其有闻<br/>
+            念哉典学 思睿观通<br/>
+            有文有质 有农有工<br/>
+            兼总条贯 知至知终<br/>
+            成章乃达 若金之在熔<br/>
+            尚亨于野 无吝于宗<br/>
+            树我邦国 天下来同<br/>
+            
+        </p>
+        <br>
+        <hr>
+        <a class="end" name="end">END</a>
+        <!-- card -->
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://i0.hdslb.com/bfs/article/8af5808187e00d262f337ee7222fd374686c5c7b.jpg@1256w_1256h_!web-article-pic.webp" alt="头像">
+                    <h1>利姆露</h1>
+                    <p>职位：圣魔混世皇</p>
+                    <p>电话：66666666666</p>
+                    <p>邮箱：rimlutienpeist@outlook.com</p>
+                </div>
+                </div>
+            </div>
+<!-- js -->
+        <script>
+            var form = document.getElementById('myForm');
+                var submitButton = document.getElementById('submitButton');
+                var inputs = form.getElementsByTagName('input');
+                
+                form.addEventListener('input', 
+                function() {
+                        var isFormValid = true;
+
+                        for (var i = 0; i < inputs.length; i++) {
+                            if (!inputs[i].value) {
+                            isFormValid = false;
+                            break;
+                            }
+                        }
+
+                        if (isFormValid) {
+                            submitButton.classList.remove('disabled');
+                            submitButton.removeAttribute('disabled');
+                        } else {
+                            submitButton.classList.add('disabled');
+                            submitButton.setAttribute('disabled', 'disabled');
+                        }
+                    }
+                );        
+        </script>    
+
+    </body>
+</html>

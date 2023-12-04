@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>随机器</title>
+        <link rel="stylesheet" href="bootstrap.css">
+    </head>
+    <body>
+        <script>
+            //var people=[];
+            var timeout = 30;
+            var deleted=-1;
+            var looping = -1;
+            var timer;
+            function init(){
+                if(looping == 1){
+                    people.splice(deleted,1);
+                    clearTimeout(timer);	
+                    looping = -1;
+                    $("button").text("点击抽取一位幸运观众");
+                }
+                else{
+                    looping = 1;
+                    $("button").text("点击以停止");
+                    begintimer();
+                }
+            }
+            function randpeople(){
+                var lucky = Math.floor(Math.random()*people.length);
+                $("label").text('恭喜'+ people[lucky]+'中奖！');
+                $("label").attr('style','font-size:30pt;');
+                console.log('123');
+                deleted = lucky;
+            }
+            function begintimer(){
+                timer = setTimeout(beat, timeout);
+            }
+            function beat(){
+                timer = setTimeout(beat, timeout);
+                randpeople();
+            }
+        </script>
+        <div style="text-align:center">
+            <h1>抽奖用随机器</h1>
+            <img src="1.jpg" height=200px /><br />
+            <label><s>这里显示中奖者</s></label><br />
+            <button class="btn btn-primary" onclick="init()">点击抽取一位幸运观众</button>
+        </div>
+        <script src="jquery.js"></script>
+        <script src="bootstrap.js"></script>
+        <script src="data.js"></script>
+    </body>
+</html>

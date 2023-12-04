@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8"/>
+        <title>normal-flow</title>
+        <link rel="stylesheet" href="nf.css"/>
+    </head>
+    
+    <body>
+        <h1>基础文档流</h1>
+
+        <p>我是一个基本的块级元素。我的相邻块级元素在我的下方另起一行。</p>
+
+        <p>
+        默认情况下，我们会占据父元素 100%
+        的宽度，并且我们的高度与我们的子元素内容一样高。我们的总宽度和高度是我们的内容
+        + 内边距 + 边框宽度/高度。
+        </p>
+
+        <p>
+        我们以我们的外边距分隔。由于外边距折叠，我们以其中一个外边距的宽度分隔，而不是两个。
+        </p>
+
+        <p>
+        如果在同一行上足够的空间，行级元素（如<span>这个</span>和<span>这个</span>），那么它们将与相邻的文本节点将会一起放置在同一行上。如果行级元素溢出，<span>那么它们将会换行，就像这个包含文本的行级元素一样</span>，或者如果没有足够的空间，那么它们将会换到新的一行，就像这个图片一样：
+        <img width="200" height="300" src="../test/images/1.jpg" alt="snippet of cloth" />
+        </p>
+    </body>
+</html>

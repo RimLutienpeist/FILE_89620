@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head lang="zh-CN">
+        <meta charset="utf-8"/>
+        <title>homework-2_20231011</title>
+        <link rel="stylesheet" href="hw-2.css" />
+    </head>
+
+    <body>
+        <!-- table -->
+        <form id="myForm" method="post">
+        <table>
+            <caption>
+                <p class="link" id="tlink">
+                    <a href="https://www.zju.edu.cn">注册信息</a>
+                </p>
+            </caption>
+            
+            <tr>
+                <th rowspan="5" >基本信息</th>
+                <td class="inFlex"><label for="name">用户姓名：</label></td>
+                <td colspan="2"><input type="text" id="name" name="user_name" required pattern="\S+.*"/></td>
+            </tr>
+            <tr>
+                <td class="inFlex"><label for="tname">真实姓名：</label></td>
+                <td colspan="2"><input type="text" id="tname" name="user_name" required pattern="\S+.*"/></td>
+            </tr>
+            <tr>
+                <td class="inFlex"><label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label></td>
+                <td colspan="2"><input type="password" id="password" name="password" required pattern="\S+.*"/></td>
+            </tr>
+            <tr>
+                <td class="inFlex"><label for="password-confirm">确认密码：</label></td>
+                <td colspan="2"><input type="password" id="password-confirm" name="password-confirm" required pattern="\S+.*"/></td>
+            </tr>
+            <tr>
+                <td class="inFlex"><label for="gender">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label></td>
+                <td colspan="2">
+                    <input class="not"  type="radio" name="gender" id="boy" value="boy"  required pattern="\S+.*"/>
+                    <label for="size_1">男</label>
+                    <input class="not"  type="radio" name="gender" id="girl" value="girl"  required pattern="\S+.*"/>
+                    <label for="size_1">女</label>
+                </td>
+            </tr>
+
+            <tr><th colspan="4">通信信息</th></tr>
+            <tr>
+                <td class="inFlex"><label for="phone">手机号码：</label></td>
+                <td><input type="tel" id="phone" name="phone" required pattern="\S+.*"/></td>
+                <td class="inFlex"><label for="email">电子邮箱：</label></td>
+                <td><input type="email" id="email" name="email" required pattern="\S+.*"/></td>
+            </tr>
+            <tr>
+                <td class="inFlex"><label for="address">居住地址：</label></td>
+                <td colspan="3"><input type="text" id="address" name="address" required pattern="\S+.*"/></td>
+            </tr>
+            <tr><th colspan="4">额外信息</th></tr>
+            <tr>
+                <td class="inFlex"><label for="hobby">爱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好</label></td>
+                <td colspan="3">
+                    <input class="not gab" type="checkbox" id="hobby-1" name="basketball" value="1" />
+                    <label for="hobby-1">篮球</label>
+                    <input class="not gab"  type="checkbox" id="hobby-2" name="football" value="2" />
+                    <label for="hobby-1">足球</label>
+                    <input class="not gab"  type="checkbox" id="hobby-3" name="ping-pong" value="3" />
+                    <label for="hobby-1">乒乓球</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="inFlex"><label for="photo">头&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;像</label>
+                </td>
+                <td colspan="3">
+                    <input type="file" id="photo" name="photo" required/>
+                </td>
+            <tr>
+                <td class="inFlex"><label for="subscript">个人说明</label>
+                </td>
+                <td colspan="3">
+                    <textarea id="subscript" name="subscript" required></textarea>
+                </td>
+            </tr>
+            </tr>
+    </table>
+    <br>
+
+    <button class="send disabled" id="submitButton" type="submit">Send</button>
+    <button class="send" type="reset">Reset</button>
+    </form>
+
+    <br>
+    <hr>
+    <br>
+    
+
+
+
+<!-- js -->
+        <!-- <script src="./hw-4_3.js"></script> -->
+
+        <script>
+            console.log("js1Running");
+            const form = document.getElementById('myForm');
+            // implement the border color-change corresponding to input
+            const submitButton = document.getElementById('submitButton');
+            let inputs = form.querySelectorAll('input');
+            
+            form.addEventListener('input', function() {
+                let isFormValid = true;
+
+                for (let i = 0; i < inputs.length; i++) {
+                    if (!inputs[i].value) {
+                        isFormValid = false;
+                        break;
+                    }
+                }
+
+                if (isFormValid) {
+                    submitButton.classList.remove('disabled');
+                    submitButton.removeAttribute('disabled');
+                } else {
+                    submitButton.classList.add('disabled');
+                    submitButton.setAttribute('disabled', 'disabled');
+                }
+            });   
+
+            // check the format of psaaword, email and phone number
+            console.log("js2Running");
+
+            form.addEventListener("submit", function(event) {
+                console.log("eventListenerRunning");
+                let flag = 1;
+                event.preventDefault();
+
+                const code1 = document.getElementById("password").value;
+                const code2 = document.getElementById("password-confirm").value;
+                console.log(code1,code2);
+                if(code1 != code2){
+                    alert("The two passwords you entered do not match!");
+                    flag = 0;
+                }
+
+                if(flag){
+                    console.log("phoneCheck");
+                    const phone = document.getElementById("phone");
+                    if(phone.value.toString().length !== 11){
+                        alert("Please enter a valid mobile phone number!");
+                        flag = 0;
+                    }
+                }
+
+                if(flag){
+                    console.log("emailCheck");
+                    const email = document.getElementById("email");
+                    // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const regex = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+                    if(!regex.test(email.value)) {
+                        alert("Please enter a valid email address!");
+                        flag = 0;
+                    }
+                }
+
+
+            
+                if(flag){
+                    alert("Your information has been submitted successfully");
+                    form.submit(); 
+                }
+                console.log("End");
+
+                // location.reload();
+            });
+
+        </script>    
+
+    </body>
+</html>
